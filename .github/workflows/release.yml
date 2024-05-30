@@ -1,4 +1,4 @@
-name: Build
+name: Release
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
       run: |
         echo $ENCODED_STRING > keystore-b64.txt
         base64 -d keystore-b64.txt > keystore.jks
-        
+
     - name: Setup and build with Gradle
       uses: gradle/gradle-build-action@v2
       with:
